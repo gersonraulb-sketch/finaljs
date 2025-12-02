@@ -1,8 +1,18 @@
-{
-  "id": 1,
-  "gift": "Spotify Premium",
-  "tipo": "Suscripción",
-  "tiempo": "Un mes",
-  "precio": 150,
-  "imagen": "url-imagen"
-}
+[
+  {
+    "id": 1,
+    "gift": "Spotify Premium",
+    "tipo": "Suscripción",
+    "tiempo": "1 mes",
+    "precio": 150,
+    "imagen": "https://via.placeholder.com/100"
+  },
+  {
+    "id": 2,
+    "gift": "Netflix",
+    "tipo": "Streaming",
+    "tiempo": "1 mes",
+    "precio": 200,
+    "imagen": "https://via.placeholder.com/100"
+  }
+]
