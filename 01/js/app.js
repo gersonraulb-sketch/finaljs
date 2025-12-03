@@ -1,8 +1,5 @@
 import { Gift } from "./clases.js";
 
-console.log("app.js conectado correctamente");
-alert("¡JS funcionando!");
-
 let datos = [];
 let idGiftUpdate = null;
 const cuerpoTabla = document.querySelector("#cuerpo-tabla");
@@ -11,7 +8,7 @@ const myModal = new bootstrap.Modal(
     document.getElementById("modal-gift")
 );
 
-fetch("./Data/Data.json")
+fetch("/Data/Data.json")
   .then(res => res.json())
   .then(data => {
     datos = data;
@@ -63,9 +60,6 @@ window.BorrarGift = (id) => {
     }
 };
 
-const formAgregar = document.querySelector('#form-gift');
-
-formAgregar.addEventListener('submit', agregarGift);
 
 const agregarGift = (e) => {
     e.preventDefault();
@@ -86,7 +80,11 @@ const agregarGift = (e) => {
     cargarTabla();
 };
 
-window.MostraModal = (id) => {
+const formAgregar = document.querySelector('#form-gift');
+
+formAgregar.addEventListener('submit', agregarGift);
+
+window.MostrarModal = (id) => {
     idGiftUpdate = id;
 
     const index = datos.findIndex((item)=> item.id === id);
@@ -100,9 +98,6 @@ window.MostraModal = (id) => {
     myModal.show();
 };
 
-const formModal = document.querySelector('#form-modal');
-
-formModal.addEventListener('submit', giftUpdate);
 
 const giftUpdate = (e) => {
     e.preventDefault();
@@ -119,3 +114,7 @@ const giftUpdate = (e) => {
 
     myModal.hide();
 };
+
+const formModal = document.querySelector('#form-modal');
+
+formModal.addEventListener('submit', giftUpdate);
